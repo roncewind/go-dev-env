@@ -42,9 +42,9 @@ RUN wget -qO \
  && rm /${SENZING_APT_REPOSITORY_NAME}
 
 # download and install binary openssl packages for libssl1.1 required by senzing
-RUN wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb \
- && dpkg -i ./libssl1.1_1.1.0g-2ubuntu4_amd64.deb \
- && rm -rf ./libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+# RUN wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb \
+#  && dpkg -i ./libssl1.1_1.1.0g-2ubuntu4_amd64.deb \
+#  && rm -rf ./libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 
 # Install Senzing package.
 
