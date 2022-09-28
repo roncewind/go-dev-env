@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=jupyter/minimal-notebook
+ARG BASE_IMAGE=golang:1.19-bullseye
 FROM $BASE_IMAGE
 
 # Create the build image.
@@ -17,8 +17,8 @@ ENV SENZING_ACCEPT_EULA=${SENZING_ACCEPT_EULA} \
     SENZING_APT_REPOSITORY_NAME=${SENZING_APT_REPOSITORY_NAME} \
     SENZING_APT_REPOSITORY_URL=${SENZING_APT_REPOSITORY_URL}
 
-LABEL Name="senzing/senzing-tutorial-in-python" \
-      Maintainer="support@senzing.com" \
+LABEL Name="roncewind/go-dev-env" \
+      Maintainer="dad@lynntribe.com" \
       Version="0.0.0"
 
 # Run as "root" for system installation.
@@ -58,15 +58,15 @@ RUN apt-get -y install \
 # Copy files from repository.
 
 COPY ./rootfs /
-COPY ./senzing-examples/python /home/${NB_USER}/senzing-examples
-COPY ./senzing-tutorials /home/${NB_USER}/senzing-tutorials
-RUN rmdir /home/${NB_USER}/work \
- && fix-permissions "/home/${NB_USER}" \
- && fix-permissions "/var/opt/senzing"
+# COPY ./senzing-examples/python /home/${NB_USER}/senzing-examples
+# COPY ./senzing-tutorials /home/${NB_USER}/senzing-tutorials
+# RUN rmdir /home/${NB_USER}/work \
+#  && fix-permissions "/home/${NB_USER}" \
+#  && fix-permissions "/var/opt/senzing"
 
 # switch to the jupyter labs user
 
-USER $NB_UID
+# USER $NB_UID
 
 # Set environment variables for $NB_UID.
 
