@@ -75,6 +75,10 @@ COPY ./rootfs /
 #  && fix-permissions "/home/${NB_USER}" \
 #  && fix-permissions "/var/opt/senzing"
 
+# set permissions on the default database
+
+RUN chmod -R 777 /var/opt/senzing/
+
 # switch to the jupyter labs user
 
 # USER $NB_UID
