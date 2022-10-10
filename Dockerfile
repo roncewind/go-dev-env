@@ -58,6 +58,7 @@ RUN apt-get -y install \
       python3-psycopg2 \
       ${SENZING_APT_INSTALL_PACKAGE} \
       ${SENZING_APT_INSTALL_TOOLS_PACKAGE} \
+      sqlite3 \
 #       ${SENZING_APT_INSTALL_API_PACKAGE} \
 #       ${SENZING_APT_INSTALL_DATA_PACKAGE} \
 #  && mv /opt/senzing/data/${SENZING_DATA_VERSION}/* /opt/senzing/data/ \
