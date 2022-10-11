@@ -76,15 +76,7 @@ COPY ./rootfs /
 #  && fix-permissions "/home/${NB_USER}" \
 #  && fix-permissions "/var/opt/senzing"
 
-# set permissions on the default database
-
-RUN chmod -R 777 /var/opt/senzing/
-
-# switch to the jupyter labs user
-
-# USER $NB_UID
-
-# Set environment variables for $NB_UID.
+# Set environment variables
 
 ENV LANGUAGE=C \
     LC_ALL=C.UTF-8 \
@@ -105,3 +97,6 @@ ENV LANGUAGE=C \
     }' \
     SENZING_SKIP_DATABASE_PERFORMANCE_TEST=true \
     SENZING_TOOLS_DATABASE_URL="sqlite3://na:na@/var/opt/senzing/sqlite/G2C.db"
+
+# set permissions on the default database
+RUN chmod -R 777 /var/opt/senzing/
