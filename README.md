@@ -5,15 +5,15 @@
 
 ```console
 go run . --inputURL "file:///go/src/roncewind.git/move/bad_test.jsonl" --outputURL "amqp://guest:guest@192.168.6.92:5672"
-go run . --inputURL "file:///go/src/roncewind.git/move/loadtest-dataset-1M-with-datasource.jsonl" --outputURL "amqp://guest:guest@192.168.6.92:5672"
-go run . --inputURL "file:///go/src/roncewind.git/move/loadtest-dataset-100.jsonl" --outputURL "amqp://guest:guest@192.168.6.94:5672"
+go run . --inputURL "file:///go/src/roncewind.git/move/loadtest-dataset-1M-with-datasource.jsonl" --outputURL "amqp://guest:guest@192.168.6.96:5672"
+go run . --inputURL "file:///go/src/roncewind.git/move/loadtest-dataset-100.jsonl" --outputURL "amqp://guest:guest@192.168.6.96:5672"
 
 ```
 
 ## Run load inside docker container
 
 ```console
-go run . --inputURL "amqp://guest:guest@192.168.6.94:5672"
+go run . --inputURL "amqp://guest:guest@192.168.6.96:5672"
 ```
 
 ## scratch pad:

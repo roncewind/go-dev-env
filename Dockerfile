@@ -78,7 +78,11 @@ COPY ./rootfs /
 
 # Set environment variables
 
-ENV LANGUAGE=C \
+ENV CGO_CFLAGS="-I/opt/senzing/g2/sdk/c" \
+    CGO_LDFLAGS="-L/opt/senzing/g2/lib -lG2" \
+    GOARCH=amd64 \
+    GOOS=linux \
+    LANGUAGE=C \
     LC_ALL=C.UTF-8 \
     LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/senzing/g2/lib \
     PATH=${PATH}:/opt/senzing/g2/python \
