@@ -99,6 +99,7 @@ ENV CGO_CFLAGS="-I/opt/senzing/g2/sdk/c" \
               "CONNECTION": "sqlite3://na:na@/var/opt/senzing/sqlite/G2C.db" \
        } \
     }' \
+    SENZING_G2_DIR=/opt/senzing/g2 \
     SENZING_SKIP_DATABASE_PERFORMANCE_TEST=true \
     SENZING_TOOLS_DATABASE_URL="sqlite3://na:na@/var/opt/senzing/sqlite/G2C.db"
 
