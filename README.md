@@ -22,11 +22,13 @@ go run . --inputURL "amqp://guest:guest@Rons-MacBook-Pro.local"
 ## scratch pad:
 
 ```
+docker run -it --rm --name go-dev --volume /home/roncewind/docktermj.git/:/go/src/docktermj.git --volume /home/roncewind/roncewind.git/:/go/src/roncewind.git --volume /home/roncewind/senzing.git/:/go/src/senzing.git roncewind/go-dev-env
+
 export SENZING_TOOLS_DATABASE_URL="sqlite3://na:na@/var/opt/senzing/sqlite/G2C.db"
 search {"name_last": "Lovell", "name_first": "Devin", "date_of_birth": "1992-12-10"}
 search {"DATE_OF_BIRTH": "1974-7-16", "NAME_LAST": "OBERMOELLER", "SOCIAL_HANDLE": "shuddersv"}
 docker exec -it go-dev /bin/bash
-docker run -it --rm --name go-dev --volume /home/roncewind/docktermj.git/:/go/src/docktermj.git --volume /home/roncewind/roncewind.git/:/go/src/roncewind.git roncewind/go-dev-env
+
 hostname -I | awk '{print $1}'
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
 
